@@ -507,6 +507,9 @@ ngx_conf_set_access_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
             goto invalid;
         }
 
+         ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "22222 \"%V\" \"%V\" ", &value[i],p);
+        
+        
         *access |= right << shift;
     }
 
