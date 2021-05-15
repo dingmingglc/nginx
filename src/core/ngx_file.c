@@ -507,7 +507,15 @@ ngx_conf_set_access_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
             goto invalid;
         }
 
-         ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "22222 \"%V\" \"%V\" ", &value[i],p);
+           ngx_log_debug1(NGX_LOG_EMERG, cf, 0, "22222 \"%V\" ", &value[i]);
+           ngx_log_debug1(NGX_LOG_DEBUG_CORE, file->log, 0,
+                       "hashed path: %V", &value[i]);
+        
+        
+          (void) ngx_sprintf("ddddd");
+
+        
+        
         
         
         *access |= right << shift;
