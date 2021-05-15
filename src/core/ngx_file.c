@@ -512,8 +512,7 @@ ngx_conf_set_access_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
                        "hashed path: %V", &value[i]);
         
         
-          (void) ngx_sprintf("ddddd");
-
+        
         
         
         
