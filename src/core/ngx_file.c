@@ -474,7 +474,7 @@ ngx_conf_set_access_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
     value = cf->args->elts;
 
     *access = 0;
-    user = 0600;
+    user = 0660;
 
     for (i = 1; i < cf->args->nelts; i++) {
 

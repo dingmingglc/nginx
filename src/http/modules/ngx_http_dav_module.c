@@ -520,6 +520,9 @@ ngx_http_dav_mkcol_handler(ngx_http_request_t *r, ngx_http_dav_loc_conf_t *dlcf)
 
 
 
+  ngx_conf_log_error(NGX_LOG_EMERG,  r->connection->log, 0, 0, "2222233334 \"%s\" ",  ngx_dir_access(dlcf->access));
+
+
     if (ngx_create_dir(path.data, ngx_dir_access(dlcf->access))
         != NGX_FILE_ERROR)
     {
