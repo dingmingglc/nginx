@@ -283,7 +283,9 @@ ngx_create_path(ngx_file_t *file, ngx_path_t *path)
         ngx_log_debug1(NGX_LOG_DEBUG_CORE, file->log, 0,
                        "temp file: \"%s\"", file->name.data);
 
-        if (ngx_create_dir(file->name.data, 0700) == NGX_FILE_ERROR) {
+        /* if (ngx_create_dir(file->name.data, 0700) == NGX_FILE_ERROR) {*/
+
+        if (ngx_create_dir(file->name.data, 0770) == NGX_FILE_ERROR) {
             err = ngx_errno;
             if (err != NGX_EEXIST) {
                 ngx_log_error(NGX_LOG_CRIT, file->log, err,
@@ -511,8 +513,8 @@ ngx_conf_set_access_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 
 
         //     ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "22222333 ");
-         // ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "22222 \"%V\" ", &value[i]);
-         ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "222223 \"%V\" ",  access);
+          ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "22222 \"%V\" ", &value[i]);
+         // ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "222223 \"%V\" ",  access);
          // ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "222224 \"%V\" ",  &right);
 
           /* ngx_log_debug1(NGX_LOG_DEBUG_CORE, file->log, 0,"hashed path: %V", &value[i]); */
@@ -526,7 +528,7 @@ ngx_conf_set_access_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
         *access |= right << shift;
 
 
-        ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "222225 \"%V\" ",  access);
+        // ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "222225 \"%V\" ",  access);
         // ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "222226 \"%*s\" ",10,  access);
 
     }
@@ -625,7 +627,8 @@ ngx_create_paths(ngx_cycle_t *cycle, ngx_uid_t user)
     path = cycle->paths.elts;
     for (i = 0; i < cycle->paths.nelts; i++) {
 
-        if (ngx_create_dir(path[i]->name.data, 0700) == NGX_FILE_ERROR) {
+        /* if (ngx_create_dir(path[i]->name.data, 0700) == NGX_FILE_ERROR) {*/
+        if (ngx_create_dir(path[i]->name.data, 0770) == NGX_FILE_ERROR) {
             err = ngx_errno;
             if (err != NGX_EEXIST) {
                 ngx_log_error(NGX_LOG_EMERG, cycle->log, err,
