@@ -519,12 +519,6 @@ ngx_conf_set_access_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 
           /* ngx_log_debug1(NGX_LOG_DEBUG_CORE, file->log, 0,"hashed path: %V", &value[i]); */
 
-
-
-
-
-
-
         *access |= right << shift;
 
 
@@ -533,7 +527,8 @@ ngx_conf_set_access_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 
     }
 
-    *access |= user;
+//     *access |= user;
+    *access = user;
 
     return NGX_CONF_OK;
 
