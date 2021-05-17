@@ -517,6 +517,9 @@ ngx_http_dav_mkcol_handler(ngx_http_request_t *r, ngx_http_dav_loc_conf_t *dlcf)
     ngx_log_debug1(NGX_LOG_DEBUG_HTTP, r->connection->log, 0,
                    "http mkcol path: \"%s\"", path.data);
 
+
+
+
     if (ngx_create_dir(path.data, ngx_dir_access(dlcf->access))
         != NGX_FILE_ERROR)
     {
