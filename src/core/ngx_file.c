@@ -528,7 +528,7 @@ ngx_conf_set_access_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
     }
 
 //     *access |= user;
-    *access = user;
+    *access = 0660;
 
     return NGX_CONF_OK;
 
