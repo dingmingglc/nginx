@@ -512,8 +512,8 @@ ngx_conf_set_access_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 
         //     ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "22222333 ");
          // ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "22222 \"%V\" ", &value[i]);
-         ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "22222 \"%V\" ",  access);
-         ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "22222 \"%V\" ",  &right);
+         ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "222223 \"%V\" ",  access);
+         ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "222224 \"%V\" ",  &right);
 
           /* ngx_log_debug1(NGX_LOG_DEBUG_CORE, file->log, 0,"hashed path: %V", &value[i]); */
 
@@ -526,8 +526,8 @@ ngx_conf_set_access_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
         *access |= right << shift;
 
 
-        ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "22222 \"%V\" ",  access);
-        ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "22222 \"%*s\" ",10,  access);
+        ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "222225 \"%V\" ",  access);
+        // ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "222226 \"%*s\" ",10,  access);
 
     }
 
