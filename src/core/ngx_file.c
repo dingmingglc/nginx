@@ -513,7 +513,7 @@ ngx_conf_set_access_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 
 
         //     ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "22222333 ");
-          ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "22222 \"%V\" ", &value[i]);
+          ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "22222 \"%V\" ", &value[i].data);
          // ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "222223 \"%V\" ",  access);
          // ngx_conf_log_error(NGX_LOG_EMERG, cf, 0, "222224 \"%V\" ",  &right);
 
@@ -527,8 +527,8 @@ ngx_conf_set_access_slot(ngx_conf_t *cf, ngx_command_t *cmd, void *conf)
 
     }
 
-//     *access |= user;
-    *access = 0660;
+     *access |= user;
+
 
     return NGX_CONF_OK;
 
